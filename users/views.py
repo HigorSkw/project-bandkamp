@@ -18,6 +18,13 @@ class UserView(APIView):
 
         return Response(serializer.data, status.HTTP_201_CREATED)
 
+    def get(self, request:Request) -> Response:
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+
+        return Response(serializer.data, status.HTTP_200_OK)
+    
+
 
 class UserDetailView(APIView):
     authentication_classes = [JWTAuthentication]
