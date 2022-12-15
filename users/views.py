@@ -88,3 +88,4 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    lookup_url_kwarg = "pk"
