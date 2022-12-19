@@ -45,6 +45,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "drf_spectacular",
+
 ]
 
 MY_APPS = [
@@ -128,9 +130,15 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Project Legado",
+    "DESCRIPTION": "Neste projeto, foi realizado a transição de uma conexão utilizando o sqlite3 para um banco de dados real."
+}
+
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 # Internationalization
